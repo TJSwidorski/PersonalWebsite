@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TJ Swidorski — Personal Website</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600&family=Spectral:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Manrope:wght@300;400;500;600&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+  :root {
+    /* Defaults — Warm paper palette + Newsreader/Inter Tight */
+    --paper: #f5f1ea;
+    --paper-2: #ede7dc;
+    --ink: #2a1f15;
+    --ink-soft: #5a4a38;
+    --muted: #8b7558;
+    --rule: #d4c5a9;
+    --accent: #c97b5a;
+
+    --font-serif: "Newsreader", Georgia, serif;
+    --font-sans: "Inter Tight", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+
+  /* Theme: warm-paper (default) */
+  [data-theme="warm-paper"] {
+    --paper: #f5f1ea;
+    --paper-2: #ede7dc;
+    --ink: #2a1f15;
+    --ink-soft: #5a4a38;
+    --muted: #8b7558;
+    --rule: #d4c5a9;
+    --accent: #c97b5a;
+  }
+  /* Theme: sage */
+  [data-theme="sage"] {
+    --paper: #f1efe8;
+    --paper-2: #e6e3d7;
+    --ink: #1f2a23;
+    --ink-soft: #4a5a4f;
+    --muted: #7a8a7d;
+    --rule: #c8cdb8;
+    --accent: #5a8a6a;
+  }
+  /* Theme: ink */
+  [data-theme="ink"] {
+    --paper: #f4f1ec;
+    --paper-2: #ebe7df;
+    --ink: #1a1a1a;
+    --ink-soft: #4a4a4a;
+    --muted: #888;
+    --rule: #d4cfc4;
+    --accent: #2a4d8c;
+  }
+  /* Theme: clay */
+  [data-theme="clay"] {
+    --paper: #f3ede4;
+    --paper-2: #e8e0d3;
+    --ink: #2d1810;
+    --ink-soft: #5a3a28;
+    --muted: #8a6a55;
+    --rule: #d6c4ae;
+    --accent: #a64b2a;
+  }
+
+  /* Dark mode toggle (overrides ink/paper, keeps theme accent) */
+  [data-dark="true"][data-theme="warm-paper"] {
+    --paper: #1a1410;
+    --paper-2: #221b14;
+    --ink: #f0e8db;
+    --ink-soft: #c4b8a3;
+    --muted: #8a7858;
+    --rule: #3a2f22;
+  }
+  [data-dark="true"][data-theme="sage"] {
+    --paper: #15191494;
+    --paper: #141815;
+    --paper-2: #1c211d;
+    --ink: #e8ebe0;
+    --ink-soft: #b8c0b0;
+    --muted: #788278;
+    --rule: #2e342e;
+  }
+  [data-dark="true"][data-theme="ink"] {
+    --paper: #121212;
+    --paper-2: #1a1a1a;
+    --ink: #ececec;
+    --ink-soft: #b8b8b8;
+    --muted: #777;
+    --rule: #2a2a2a;
+    --accent: #6b95d6;
+  }
+  [data-dark="true"][data-theme="clay"] {
+    --paper: #1a110b;
+    --paper-2: #221710;
+    --ink: #efe2d2;
+    --ink-soft: #c4ad94;
+    --muted: #8a705a;
+    --rule: #3a2a1e;
+    --accent: #d96a48;
+  }
+
+  /* Font pairings — applied via [data-font] attribute */
+  [data-font="newsreader"] {
+    --font-serif: "Newsreader", Georgia, serif;
+    --font-sans: "Inter Tight", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+  }
+  [data-font="fraunces"] {
+    --font-serif: "Fraunces", Georgia, serif;
+    --font-sans: "DM Sans", system-ui, sans-serif;
+  }
+  [data-font="instrument"] {
+    --font-serif: "Instrument Serif", Georgia, serif;
+    --font-sans: "Space Grotesk", system-ui, sans-serif;
+  }
+  [data-font="spectral"] {
+    --font-serif: "Spectral", Georgia, serif;
+    --font-sans: "Manrope", system-ui, sans-serif;
+  }
+  [data-font="crimson"] {
+    --font-serif: "Crimson Pro", Georgia, serif;
+    --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #1a1410;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * { box-sizing: border-box; }
+
+  a { transition: color 0.2s ease, opacity 0.2s ease; }
+
+  /* Subtle hover effects */
+  .proj-card { transition: transform 0.3s ease, opacity 0.3s ease; }
+  .proj-card:hover { opacity: 0.92; }
+  .proj-card-v2 { transition: border-color 0.25s ease, transform 0.25s ease; }
+  .proj-card-v2:hover { border-color: var(--accent) !important; transform: translateY(-2px); }
+  .proj-card-v3 { transition: border-color 0.25s ease, transform 0.25s ease; }
+  .proj-card-v3:hover { border-color: var(--accent) !important; transform: translateY(-2px); }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Fade-in on mount */
+  .fade-in {
+    animation: fadeIn 0.6s ease both;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Design canvas container styling override */
+  body { background: #1a1410; }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="design-canvas.jsx"></script>
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="shared/data.jsx"></script>
+  <script type="text/babel" src="shared/components.jsx"></script>
+  <script type="text/babel" src="variations/v1-editorial.jsx"></script>
+  <script type="text/babel" src="variations/v2-magazine.jsx"></script>
+  <script type="text/babel" src="variations/v3-cardstack.jsx"></script>
+
+  <script type="text/babel" data-presets="react">
+    const { useEffect } = React;
+
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "theme": "sage",
+      "font": "crimson",
+      "dark": false
+    }/*EDITMODE-END*/;
+
+    function App() {
+      const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+      // Apply theme/font/dark to <html> so they cascade everywhere
+      useEffect(() => {
+        document.documentElement.setAttribute("data-theme", t.theme);
+        document.documentElement.setAttribute("data-font", t.font);
+        document.documentElement.setAttribute("data-dark", String(!!t.dark));
+        // Live-update portrait so the user can paste a URL and see it everywhere
+        if (window.PORTFOLIO_DATA) {
+          window.PORTFOLIO_DATA.portrait = (t.portrait || "").trim() || null;
+        }
+      }, [t.theme, t.font, t.dark, t.portrait]);
+
+      const artboardWrap = (Component) => (
+        <div data-screen-label={Component.name} className="fade-in" style={{ background: "var(--paper)" }}>
+          <Component />
+        </div>
+      );
+
+      return (
+        <>
+          <DesignCanvas
+            title="TJ Swidorski — Personal Website"
+            subtitle="Three directions · use Tweaks to switch theme / font / dark mode"
+          >
+            <DCSection id="variations" title="Personal website">
+              <DCArtboard
+                id="v2"
+                label="Magazine Index (sticky sidebar, structured)"
+                width={1180}
+                height={6700}
+              >
+                {artboardWrap(SiteV2)}
+              </DCArtboard>
+            </DCSection>
+          </DesignCanvas>
+
+          <TweaksPanel title="Tweaks">
+            <TweakSection title="Theme" subtitle="Color palette across all three variations">
+              <TweakColor
+                label="Palette"
+                value={t.theme}
+                onChange={(v) => setTweak("theme", v)}
+                options={[
+                  { value: "warm-paper", label: "Warm paper", swatch: ["#c97b5a", "#f5f1ea", "#2a1f15"] },
+                  { value: "sage", label: "Sage", swatch: ["#5a8a6a", "#f1efe8", "#1f2a23"] },
+                  { value: "clay", label: "Clay", swatch: ["#a64b2a", "#f3ede4", "#2d1810"] },
+                  { value: "ink", label: "Ink & blue", swatch: ["#2a4d8c", "#f4f1ec", "#1a1a1a"] },
+                ]}
+              />
+              <TweakToggle
+                label="Dark mode"
+                value={t.dark}
+                onChange={(v) => setTweak("dark", v)}
+              />
+            </TweakSection>
+
+            <TweakSection title="Portrait" subtitle="Paste an image URL to use across all variations">
+              <TweakText
+                label="Image URL"
+                value={t.portrait}
+                placeholder="https://… or leave blank for placeholder"
+                onChange={(v) => setTweak("portrait", v)}
+              />
+            </TweakSection>
+
+            <TweakSection title="Type" subtitle="Heading + body pairing">
+              <TweakSelect
+                label="Pairing"
+                value={t.font}
+                onChange={(v) => setTweak("font", v)}
+                options={[
+                  { value: "newsreader", label: "Newsreader + Inter Tight" },
+                  { value: "fraunces", label: "Fraunces + DM Sans" },
+                  { value: "instrument", label: "Instrument Serif + Space Grotesk" },
+                  { value: "spectral", label: "Spectral + Manrope" },
+                  { value: "crimson", label: "Crimson Pro + IBM Plex Sans" },
+                ]}
+              />
+            </TweakSection>
+          </TweaksPanel>
+        </>
+      );
+    }
+
+    // TweakColor: render swatches manually since starter doesn't accept rich options
+    // Override the default to support {value, label, swatch} shape
+    function TweakColor({ label, value, onChange, options }) {
+      return (
+        <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+          <div style={{ fontSize: 12, color: "rgba(0,0,0,0.6)", fontWeight: 500 }}>{label}</div>
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: 8 }}>
+            {options.map((opt) => {
+              const active = opt.value === value;
+              return (
+                <button
+                  key={opt.value}
+                  onClick={() => onChange(opt.value)}
+                  style={{
+                    border: active ? "2px solid #111" : "1px solid rgba(0,0,0,0.12)",
+                    background: opt.swatch[1],
+                    padding: "8px 10px",
+                    cursor: "pointer",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 6,
+                    textAlign: "left",
+                    borderRadius: 6,
+                  }}
+                >
+                  <div style={{ display: "flex", gap: 4 }}>
+                    {opt.swatch.map((c, i) => (
+                      <div
+                        key={i}
+                        style={{
+                          width: 16,
+                          height: 16,
+                          background: c,
+                          borderRadius: 3,
+                          border: "1px solid rgba(0,0,0,0.08)",
+                        }}
+                      />
+                    ))}
+                  </div>
+                  <div style={{ fontSize: 11, color: opt.swatch[2], fontWeight: 500 }}>
+                    {opt.label}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      );
+    }
+    window.TweakColor = TweakColor;
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
