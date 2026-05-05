@@ -2,8 +2,7 @@
 window.PORTFOLIO_DATA = {
   name: "TJ Swidorski",
   tagline: "Proactive, data-driven, and quietly relentless — turning numbers into decisions that move things forward.",
-  // Portrait: drop your headshot JPG/PNG into Frontend/assets/ then set the path, e.g. "assets/headshot.jpg"
-  portrait: null,
+  portrait: "assets/headshot.jpg",
   hero: {
     wave: "Hi, I'm TJ.",
     headline: "I turn data into decisions",
@@ -78,8 +77,7 @@ window.PORTFOLIO_DATA = {
       tags: ["Analytics", "Sports", "Product"],
       // url: link directly to your GitHub repo or live site
       url: "https://github.com/TJSwidorski",
-      // image: drop a screenshot into Frontend/assets/ then set path, e.g. "assets/axiom-sports.png"
-      image: null,
+      image: "assets/axiom-sports.png",
       placeholder: "axiom sports\nproduct shot"
     }
   ],
