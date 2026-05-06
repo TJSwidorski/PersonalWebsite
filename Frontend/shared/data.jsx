@@ -1,7 +1,7 @@
 // Shared portfolio data — used by all 3 variations
 window.PORTFOLIO_DATA = {
   name: "TJ Swidorski",
-  tagline: "Proactive, hard-working, and a clear communicator. Interested in predictive modeling and using data to surface the insights that drive real decisions.",
+  tagline: "Proactive, hard-working, and a clear communicator. I am interested in predictive modeling and using data to surface the insights that drive real decisions.",
   portrait: "assets/headshot.jpg",
   hero: {
     wave: "Hi, I'm TJ.",
