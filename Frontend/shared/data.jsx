@@ -5,12 +5,12 @@ window.PORTFOLIO_DATA = {
   portrait: "assets/headshot.jpg",
   hero: {
     wave: "Hi, I'm TJ.",
-    headline: "I turn data into decisions",
-    headlineEm: "that move the needle.",
+    headline: "I don't just analyze data",
+    headlineEm: "I build models that revolutionize data-driven decisions.",
   },
-  shortBio: "Data Analyst (soon-to-be-grad) at Cornell, focused on predictive analytics in biotech, sports science, and business intelligence.",
-  location: "Ithaca, NY",
-  status: "Graduating soon — open to new grad roles",
+  shortBio: "Baseball Student-Athlete at Cornell, focused on predictive analytics in biotech, sports science, and business intelligence.",
+  location: "Miami, FL",
+  status: "Open to New Grad Roles: Graduating May 2026",
   roles: [
     "Data Science",
     "Data Analytics",
@@ -27,7 +27,7 @@ window.PORTFOLIO_DATA = {
   interests: [
     {
       title: "Predictive health & biotech",
-      body: "Using data to forecast when individuals will get sick, injured, or contract disease — turning patterns into early warnings that change outcomes."
+      body: "Using data to forecast when individuals will get sick, injured, or contract diseases — turning patterns into early warnings that change outcomes."
     },
     {
       title: "Applied AI / ML",
@@ -35,7 +35,7 @@ window.PORTFOLIO_DATA = {
     },
     {
       title: "Data → business decisions",
-      body: "Translating messy operational data into the small number of insights that actually unlock growth, efficiency, or new strategy."
+      body: "Translating messy operational data into the insights which unlock growth, efficiency, and success."
     }
   ],
   experience: [
