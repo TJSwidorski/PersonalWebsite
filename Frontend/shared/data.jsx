@@ -8,7 +8,7 @@ window.PORTFOLIO_DATA = {
     headline: "I turn data into decisions",
     headlineEm: "that move the needle.",
   },
-  shortBio: "Data Analyst (soon-to-be-grad) at Cornell, focused on predictive analytics in biotech, sports science, and business strategy.",
+  shortBio: "Data Analyst (soon-to-be-grad) at Cornell, focused on predictive analytics in biotech, sports science, and business intelligence.",
   location: "Ithaca, NY",
   status: "Graduating soon — open to new grad roles",
   roles: [

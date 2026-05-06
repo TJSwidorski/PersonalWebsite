@@ -229,6 +229,39 @@ window.SiteV2 = function SiteV2() {
           background: var(--v2-paper-card) !important;
           transform: translateX(4px);
         }
+
+        @media (max-width: 768px) {
+          .v2-layout {
+            grid-template-columns: 1fr !important;
+            padding: 20px 16px 60px !important;
+            gap: 0 !important;
+          }
+          .v2-sidebar {
+            position: relative !important;
+            top: auto !important;
+          }
+          .v2-portrait-wrap {
+            width: 120px !important;
+          }
+          .v2-hero-h1 {
+            font-size: 38px !important;
+            line-height: 1.1 !important;
+          }
+          .v2-2col {
+            grid-template-columns: 1fr !important;
+          }
+          .v2-timeline-line {
+            display: none !important;
+          }
+          .v2-exp-row {
+            display: block !important;
+            padding-left: 16px !important;
+            border-left: 2px solid var(--v2-rule) !important;
+          }
+          .v2-exp-dot {
+            display: none !important;
+          }
+        }
       `}</style>
 
       {/* Decorative blobs in the background */}
@@ -285,6 +318,7 @@ window.SiteV2 = function SiteV2() {
       />
 
       <div
+        className="v2-layout"
         style={{
           display: "grid",
           gridTemplateColumns: "260px minmax(0, 1fr)",
@@ -300,8 +334,9 @@ window.SiteV2 = function SiteV2() {
         }}
       >
         {/* ── SIDEBAR ───────────────────────────────────────────────────── */}
-        <aside style={{ position: "sticky", top: 56, alignSelf: "start" }} className="v2-rise v2-rise-1">
+        <aside style={{ position: "sticky", top: 56, alignSelf: "start" }} className="v2-rise v2-rise-1 v2-sidebar">
           <div
+            className="v2-portrait-wrap"
             style={{
               width: "100%",
               aspectRatio: "1/1",
@@ -532,6 +567,7 @@ window.SiteV2 = function SiteV2() {
               {D.location} · {D.status}
             </div>
             <h1
+              className="v2-hero-h1"
               style={{
                 fontFamily: "var(--font-serif)",
                 fontWeight: 400,
@@ -624,7 +660,7 @@ window.SiteV2 = function SiteV2() {
             <Divider />
             <div style={sectionLabel}>I — Interests</div>
             <h2 style={h2}>Where I'm pointing the work.</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+            <div className="v2-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
               {D.interests.map((it, i) => {
                 const accents = [
                   { bar: "var(--v2-sage)", soft: "var(--v2-sage-soft)" },
@@ -707,6 +743,7 @@ window.SiteV2 = function SiteV2() {
               {/* Timeline line */}
               <div
                 aria-hidden
+                className="v2-timeline-line"
                 style={{
                   position: "absolute",
                   left: 8,
@@ -722,6 +759,7 @@ window.SiteV2 = function SiteV2() {
                 return (
                   <div
                     key={i}
+                    className="v2-exp-row"
                     style={{
                       display: "grid",
                       gridTemplateColumns: "40px 130px 1fr 1fr",
@@ -732,7 +770,7 @@ window.SiteV2 = function SiteV2() {
                       position: "relative",
                     }}
                   >
-                    <div style={{ position: "relative", paddingTop: 6 }}>
+                    <div className="v2-exp-dot" style={{ position: "relative", paddingTop: 6 }}>
                       <div
                         style={{
                           width: 18,
@@ -793,7 +831,7 @@ window.SiteV2 = function SiteV2() {
             <Divider />
             <div style={sectionLabel}>III — Projects</div>
             <h2 style={h2}>Things I've built outside class.</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
+            <div className="v2-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20 }}>
               {D.projects.map((p, i) => {
                 const tints = ["var(--v2-sage-soft)", "var(--v2-blue-soft)"];
                 return (
@@ -899,6 +937,7 @@ window.SiteV2 = function SiteV2() {
             <div style={sectionLabel}>IV — Off the clock</div>
             <h2 style={h2}>{D.baseball.headline}.</h2>
             <div
+              className="v2-2col"
               style={{
                 display: "grid",
                 gridTemplateColumns: "1fr 1fr",
@@ -937,7 +976,7 @@ window.SiteV2 = function SiteV2() {
                   Cornell Big Red · 4 yrs
                 </div>
               </div>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
+              <div className="v2-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8 }}>
                 {D.baseball.photos.slice(0, 2).map((p, i) => (
                   <div key={i} style={{ borderRadius: 10, overflow: "hidden" }}>
                     {p.src ? (
@@ -963,7 +1002,7 @@ window.SiteV2 = function SiteV2() {
             <Divider />
             <div style={sectionLabel}>V — Skills &amp; tooling</div>
             <h2 style={h2}>What I reach for.</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
+            <div className="v2-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 28 }}>
               {Object.entries(D.skills).map(([k, vs], gi) => {
                 const groupColors = [
                   { bg: "var(--v2-sage-soft)", fg: "var(--v2-sage)" },
@@ -1018,7 +1057,7 @@ window.SiteV2 = function SiteV2() {
             <Divider />
             <div style={sectionLabel}>VI — Certifications</div>
             <h2 style={h2}>Recently completed.</h2>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+            <div className="v2-2col" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
               {D.certifications.map((c, i) => {
                 const issuerColors = {
                   "Anthropic": { bg: "var(--v2-sage-soft)", fg: "var(--v2-sage)" },
