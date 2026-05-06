@@ -595,9 +595,7 @@ window.SiteV2 = function SiteV2() {
                 textWrap: "pretty",
               }}
             >
-              {D.tagline} I split my time between the dugout and the dataset, and
-              I'm equally at home in either. Below: a working table of contents
-              for who I am and what I've built.
+              {D.tagline}
             </p>
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
               <a href="#projects" className="v2-cta" style={btnPrimaryV2}>
