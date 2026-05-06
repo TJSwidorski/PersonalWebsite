@@ -579,10 +579,11 @@ window.SiteV2 = function SiteV2() {
                 textWrap: "balance",
               }}
             >
-              {D.hero.headline}{" "}
-              <span className="v2-h1-em" style={{ fontStyle: "italic" }}>
-                {D.hero.headlineEm}
-              </span>
+              I close the gap between{" "}
+              <span className="v2-h1-em" style={{ fontStyle: "normal" }}>data</span>
+              {" "}and the{" "}
+              <span className="v2-h1-em" style={{ fontStyle: "normal" }}>decisions</span>
+              {" "}that matter.
             </h1>
             <p
               style={{

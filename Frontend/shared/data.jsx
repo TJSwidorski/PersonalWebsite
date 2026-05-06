@@ -1,12 +1,11 @@
 // Shared portfolio data — used by all 3 variations
 window.PORTFOLIO_DATA = {
   name: "TJ Swidorski",
-  tagline: "Proactive, data-driven, and quietly relentless — turning numbers into decisions that move things forward.",
+  tagline: "Proactive, data-driven, and highly communicative — turning numbers into decisions that move things forward.",
   portrait: "assets/headshot.jpg",
   hero: {
     wave: "Hi, I'm TJ.",
-    headline: "I don't just analyze data",
-    headlineEm: "I build models that revolutionize data-driven decisions.",
+    headline: "I close the gap between data and the decisions that matter.",
   },
   shortBio: "Baseball Student-Athlete at Cornell, focused on predictive analytics in biotech, sports science, and business intelligence.",
   location: "Miami, FL",
