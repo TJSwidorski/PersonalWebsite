@@ -579,11 +579,10 @@ window.SiteV2 = function SiteV2() {
                 textWrap: "balance",
               }}
             >
-              I turn messy data into{" "}
+              {D.hero.headline}{" "}
               <span className="v2-h1-em" style={{ fontStyle: "italic" }}>
-                decisions that move
-              </span>{" "}
-              the needle.
+                {D.hero.headlineEm}
+              </span>
             </h1>
             <p
               style={{
