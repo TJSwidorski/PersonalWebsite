@@ -5,7 +5,7 @@ window.PORTFOLIO_DATA = {
   portrait: "assets/headshot.jpg",
   hero: {
     wave: "Hi, I'm TJ.",
-    headline: "I close the gap between data and the decisions that matter.",
+    headline: "I build models that turn messy data into competitive advantage.",
   },
   shortBio: "Baseball Student-Athlete at Cornell, focused on predictive analytics in biotech, sports science, and business intelligence.",
   location: "Miami, FL",
@@ -59,6 +59,15 @@ window.PORTFOLIO_DATA = {
   ],
   projects: [
     {
+      name: "Axiom Sports Picks",
+      blurb: "A sports analytics venture combining athlete data, scouting metrics, and predictive modeling to inform recruiting and player development decisions.",
+      tags: ["Analytics", "Sports", "Product"],
+      // url: link directly to your GitHub repo or live site
+      url: "https://axiompicks.netlify.app/",
+      image: "assets/axiom-sports.png",
+      placeholder: "axiom sports\nproduct shot"
+    },
+    {
       name: "Stroke Prediction Dashboard",
       blurb: "An interactive dashboard that predicts stroke risk from patient health indicators — built to make ML model output legible to non-technical audiences.",
       tags: ["Python", "ML", "Dashboard", "Healthcare"],
@@ -69,17 +78,9 @@ window.PORTFOLIO_DATA = {
       // image: drop a screenshot into Frontend/assets/ then set path, e.g. "assets/stroke-dashboard.png"
       image: null,
       placeholder: "stroke risk dashboard\nscreenshot"
-    },
-    {
-      name: "Axiom Sports",
-      blurb: "A sports analytics venture combining athlete data, scouting metrics, and predictive modeling to inform recruiting and player development decisions.",
-      tags: ["Analytics", "Sports", "Product"],
-      // url: link directly to your GitHub repo or live site
-      url: "https://github.com/TJSwidorski",
-      image: "assets/axiom-sports.png",
-      placeholder: "axiom sports\nproduct shot"
     }
   ],
+    
   certifications: [
     { issuer: "Anthropic", name: "Claude Code 101" },
     { issuer: "Anthropic", name: "Claude Code in Action" },
