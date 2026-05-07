@@ -5,7 +5,8 @@ window.PORTFOLIO_DATA = {
   portrait: "assets/headshot.jpg",
   hero: {
     wave: "Hi, I'm TJ.",
-    headline: "I build models that turn messy data into competitive advantage.",
+    headline: "I build models that turn messy data into a",
+    headlineEM: "competitive advantage.",
   },
   shortBio: "Baseball Student-Athlete at Cornell, focused on predictive analytics in biotech, sports science, and business intelligence.",
   location: "Miami, FL",
